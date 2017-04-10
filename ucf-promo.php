@@ -18,6 +18,7 @@ add_action( 'plugins_loaded', function() {
 
 	require_once 'includes/ucf-promo-common.php';
 	require_once 'shortcodes/ucf-promo-shortcode.php';
+	require_once 'includes/ucf-promo-posttype.php';
 
 } );
 
