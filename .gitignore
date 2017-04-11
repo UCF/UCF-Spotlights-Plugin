@@ -17,6 +17,7 @@ xcuserdata
 .svn
 CVS
 =======
+gulp-config.json
 *~
 ._*
 Thumbs.db

@@ -1,0 +1,150 @@
+$ucf-gold: #ffc904;
+$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', sans-serif !default;
+
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+.promo-horizontal,
+.promo-vertical,
+.promo-square {
+
+  h2,
+  p,
+  a {
+    color: #fff;
+    font-family: $font-family-sans-serif;
+  }
+
+  .btn {
+    background-color: $ucf-gold;
+    border-radius: 0;
+    color: #000;
+    display: inline-block;
+    font-family: $font-family-sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px 18px;
+  }
+}
+
+.promo-horizontal {
+  padding: 30px;
+
+  h2 {
+    font-family: 'Knockout 49 A','Knockout 49 B',Helvetica,Arial,sans-serif;
+    font-size: 50px !important;
+    font-weight: 400;
+    letter-spacing: .2em;
+    line-height: normal !important;
+    margin-bottom: 25px;
+    margin-top: 21px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 60px !important;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 70px !important;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 16px;
+    }
+  }
+
+  a {
+    border-bottom: 0 !important;
+    color: $ucf-gold !important;
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-decoration: underline;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 23px;
+    }
+  }
+}
+
+.promo-square {
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 293px;
+  padding: 40px;
+  position: relative;
+
+  h2,
+  p,
+  a {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 3px #666;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  &:hover .btn,
+  .btn:hover {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color .4s, color .4s;
+  }
+
+  .btn-wrapper {
+    bottom: 30px;
+    left: 50%;
+    margin-left: -65px;
+    position: absolute;
+  }
+}
+
+.promo-vertical {
+
+  img {
+    max-width: 100%;
+  }
+
+  h2,
+  p {
+    color: #000;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    margin: 40px 0 15px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .btn {
+    border-bottom: 0 !important;
+
+    &:hover {
+      background: #000;
+      border-bottom: 0 !important;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color .4s, color .4s;
+    }
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
