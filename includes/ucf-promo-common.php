@@ -19,6 +19,13 @@ if ( ! class_exists( 'UCF_Promo_Common' ) ) {
 	add_action( 'wp_enqueue_scripts', array( 'UCF_Promo_Common', 'enqueue_styles' ), 99 );
 }
 
+/**
+* Returns the promo HTML to be displayed on the page.
+* @author RJ Bruneel
+* @since 1.0.0
+* @param $attr string | title of the promo post type and one of three layouts.
+* @return String
+**/
 if ( ! function_exists( 'ucf_promo_display' ) ) {
 	function ucf_promo_display( $attr ) {
 		// get post with $title
@@ -33,7 +40,7 @@ if ( ! function_exists( 'ucf_promo_display' ) ) {
 				'image'     => array_shift( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ) ),
 			);
 
-			switch ($attr['layout']) {
+			switch ( $attr['layout'] ) {
 				case "horizontal":
 					return ucf_promo_horizontal( $args );
 				case "vertical":
@@ -47,6 +54,13 @@ if ( ! function_exists( 'ucf_promo_display' ) ) {
 	}
 }
 
+/**
+* Returns the promo HTML for the horizontal layout of the promo.
+* @author RJ Bruneel
+* @since 1.0.0
+* @param $attr string | contains the various elements of the promo (header, copy, link text and link url).
+* @return String
+**/
 if ( ! function_exists( 'ucf_promo_horizontal' ) ) {
 	function ucf_promo_horizontal( $args ) {
 		ob_start();
@@ -76,6 +90,13 @@ if ( ! function_exists( 'ucf_promo_horizontal' ) ) {
 	}
 }
 
+/**
+* Returns the promo HTML for the vertical layout of the promo.
+* @author RJ Bruneel
+* @since 1.0.0
+* @param $attr string | contains the various elements of the promo (header, copy, link text and link url).
+* @return String
+**/
 if ( ! function_exists( 'ucf_promo_vertical' ) ) {
 	function ucf_promo_vertical( $args ) {
 		ob_start();
@@ -99,6 +120,13 @@ if ( ! function_exists( 'ucf_promo_vertical' ) ) {
 	}
 }
 
+/**
+* Returns the promo HTML for the square layout of the promo.
+* @author RJ Bruneel
+* @since 1.0.0
+* @param $attr string | contains the various elements of the promo (header, copy, link text and link url).
+* @return String
+**/
 if ( ! function_exists( 'ucf_promo_square' ) ) {
 	function ucf_promo_square( $args ) {
 		ob_start();
@@ -114,7 +142,7 @@ if ( ! function_exists( 'ucf_promo_square' ) ) {
 					<p><?php echo $args['copy'] ?></p>
 				<?php endif; ?>
 				<?php if( $args['link_text'] ): ?>
-					<div class="btn-wrapper text-align-center">
+					<div class="btn-wrapper">
 						<div class="btn"><?php echo $args['link_text'] ?></div>
 					</div>
 				<?php endif; ?>

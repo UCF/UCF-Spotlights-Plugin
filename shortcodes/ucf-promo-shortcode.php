@@ -1,6 +1,8 @@
 <?php
 /**
  * Registers the promo shortcode
+ * @author RJ Bruneel
+ * @since 1.0.0
  **/
 
 if ( ! class_exists( 'UCF_Promo_Shortcode' ) ) {

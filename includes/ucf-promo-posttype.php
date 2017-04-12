@@ -28,7 +28,7 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 
 		/**
 		 * Adds a metabox to the promo custom post type.
-		 * @author Jim Barnes
+		 * @author RJ Bruneel
 		 * @since 1.0.0
 		 **/
 		public static function register_metabox() {
@@ -57,43 +57,46 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 			$link_text = get_post_meta( $post->ID, 'ucf_promo_link_text', TRUE );
 			$link_url = get_post_meta( $post->ID, 'ucf_promo_link_url', TRUE );
 ?>
-			<style>
-				.width-100-percent {
-					width: 100%;
-				}
-			</style>
-			<div class="custom-field">
-				<p class="label">
-					<label for="ucf_promo_header">Header</label>
-				</p>
-				<div class="input-wrap">
-					<input type="text" id="ucf_promo_header" name="ucf_promo_header" class="width-100-percent" <?php echo ( ! empty( $header ) ) ? 'value="' . $header . '"' : ''; ?>>
-				</div>
-			</div>
-			<div class="custom-field">
-				<p class="label">
-					<label for="ucf_promo_copy">Copy</label>
-				</p>
-				<div class="input-wrap">
-					<textarea id="ucf_promo_copy" name="ucf_promo_copy" class="width-100-percent"><?php echo ( ! empty( $copy ) ) ? $copy : ''; ?></textarea>
-				</div>
-			</div>
-			<div class="custom-field">
-				<p class="label">
-					<label for="ucf_promo_link_text">Link Text</label>
-				</p>
-				<div class="input-wrap">
-					<input type="text" id="ucf_promo_link_text" name="ucf_promo_link_text" class="width-100-percent" <?php echo ( ! empty( $link_text ) ) ? 'value="' . $link_text . '"' : ''; ?>>
-				</div>
-			</div>
-			<div class="custom-field">
-				<p class="label">
-					<label for="ucf_promo_link_url">Link URL</label>
-				</p>
-				<div class="input-wrap">
-					<input type="text" id="ucf_promo_link_url" name="ucf_promo_link_url" class="width-100-percent" <?php echo ( ! empty( $link_url ) ) ? 'value="' . $link_url . '"' : ''; ?>>
-				</div>
-			</div>
+			<table class="form-table">
+				<tbody>
+					<tr>
+						<th>
+							<label class="block" for="ucf_promo_header"><strong>Header</strong></label>
+						</th>
+						<td>
+							<p class="description">(Optional) Large header displayed at the top of the promo.</p>
+							<input type="text" id="ucf_promo_header" name="ucf_promo_header" class="regular-text" <?php echo ( ! empty( $header ) ) ? 'value="' . $header . '"' : ''; ?>>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label class="block" for="ucf_promo_copy"><strong>Copy</strong></label>
+						</th>
+						<td>
+							<p class="description">(Optional) Copy displayed under the large header.</p>
+							<textarea id="ucf_promo_copy" name="ucf_promo_copy" cols="46" rows="5"><?php echo ( ! empty( $copy ) ) ? $copy : ''; ?></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label class="block" for="ucf_promo_link_text"><strong>Link Text</strong></label>
+						</th>
+						<td>
+							<p class="description">(Optional) Text displayed within the link under the copy.</p>
+							<input type="text" id="ucf_promo_link_text" name="ucf_promo_link_text" class="regular-text" <?php echo ( ! empty( $link_text ) ) ? 'value="' . $link_text . '"' : ''; ?>>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label class="block" for="ucf_promo_link_url"><strong>Link URL</strong></label>
+						</th>
+						<td>
+							<p class="description">(Optional) URL of the link.</p>
+							<input type="text" id="ucf_promo_link_url" name="ucf_promo_link_url" class="regular-text" <?php echo ( ! empty( $link_url ) ) ? 'value="' . $link_url . '"' : ''; ?>>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 <?php
 		}
 
@@ -101,7 +104,7 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		 * Handles saving the data in the metabox
 		 * @author RJ Bruneel
 		 * @since 1.0.0
-		 * @param $post WP_POST object
+		 * @param $post_id WP_POST post id
 		 **/
 		public static function save_metabox( $post_id ) {
 			$post_type = get_post_type( $post_id );
@@ -139,10 +142,11 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 
 		/**
 		 * Returns an array of labels for the custom post type.
-		 * @author Jim Barnes
+		 * @author RJ Bruneel
 		 * @since 1.0.0
 		 * @param $singular string | The singular form for the CPT labels.
 		 * @param $plural string | The plural form for the CPT labels.
+		 * @param $post_type string | The post type name.
 		 * @return Array
 		 **/
 		public static function labels( $singular, $plural, $post_type ) {
