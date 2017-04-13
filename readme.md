@@ -1,11 +1,18 @@
 # UCF Promotions #
 
-Provides a shortcode, widget, functions, and default styles for displaying Promos.
+Provides a shortcode, functions, and default styles for displaying Promos.
 
 
 ## Description ##
 
-TODO
+Adds a new post type called Promotions that can be added to pages using a ucf-promo shortcode. Promotions may optionally contain a header, copy, link and featured images.
+
+The ucf-promo shortcode has two options:
+* title - the title of the promotion to be displayed
+* layout - one of three layouts are available
+    * vertical
+    * horizontal
+    * square
 
 
 ## Installation ##
@@ -13,16 +20,9 @@ TODO
 ### Manual Installation ###
 1. Upload the plugin files (unzipped) to the `/wp-content/plugins` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the "Plugins" screen in WordPress
-3. Configure plugin settings from the WordPress admin under "TODO".
 
 ### WP CLI Installation ###
 1. `$ wp plugin install --activate https://github.com/UCF/UCF-Promo-Plugin/archive/master.zip`.  See [WP-CLI Docs](http://wp-cli.org/commands/plugin/install/) for more command options.
-2. Configure plugin settings from the WordPress admin under "TODO".
-
-
-## Frequently Asked Questions ##
-
-TODO
 
 
 
@@ -42,10 +42,5 @@ n/a
 None
 
 
-## Development & Contributing ##
-
-TODO
-
-
 ### Wishlist/TODOs ###
-* TODO
+* None
