@@ -103,20 +103,22 @@ if ( ! function_exists( 'ucf_promo_vertical' ) ) {
 	function ucf_promo_vertical( $args ) {
 		ob_start();
 	?>
-		<div class="promo-vertical">
-			<?php if( $args['image'] ): ?>
-				<img class="promo-image" src="<?php echo $args['image'] ?>" alt="">
-			<? endif; ?>
-			<?php if( $args['header'] ): ?>
-				<h2 class="promo-header"><?php echo $args['header'] ?></h2>
-			<? endif; ?>
-			<?php if( $args['copy'] ): ?>
-				<p class="promo-copy"><?php echo $args['copy'] ?></p>
-			<?php endif; ?>
-			<?php if( $args['link_url'] && $args['link_text'] ): ?>
-				<a class="promo-btn" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
-			<?php endif; ?>
-		</div>
+		<aside>
+			<div class="promo-vertical">
+				<?php if( $args['image'] ): ?>
+					<img class="promo-image" src="<?php echo $args['image'] ?>" alt="">
+				<? endif; ?>
+				<?php if( $args['header'] ): ?>
+					<h2 class="promo-header"><?php echo $args['header'] ?></h2>
+				<? endif; ?>
+				<?php if( $args['copy'] ): ?>
+					<p class="promo-copy"><?php echo $args['copy'] ?></p>
+				<?php endif; ?>
+				<?php if( $args['link_url'] && $args['link_text'] ): ?>
+					<a class="promo-btn" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
+				<?php endif; ?>
+			</div>
+		</aside>
 	<?php
 		return ob_get_clean();
 	}
@@ -133,25 +135,27 @@ if ( ! function_exists( 'ucf_promo_square' ) ) {
 	function ucf_promo_square( $args ) {
 		ob_start();
 	?>
-		<?php if( $args['link_url'] ): ?>
-			<a href="<?php echo $args['link_url'] ?>">
-		<?php endif; ?>
-			<div class="promo-square" style="background-image: url(<?php echo $args['image'] ?>)">
-				<?php if( $args['header'] ): ?>
-					<h2 class="promo-header"><?php echo $args['header'] ?></h2>
-				<? endif; ?>
-				<?php if( $args['copy'] ): ?>
-					<p class="promo-copy"><?php echo $args['copy'] ?></p>
-				<?php endif; ?>
-				<?php if( $args['link_text'] ): ?>
-					<div class="promo-btn-wrapper">
-						<div class="promo-btn"><?php echo $args['link_text'] ?></div>
-					</div>
-				<?php endif; ?>
-			</div>
-		<?php if( $args['link_url'] ): ?>
-			</a>
-		<?php endif; ?>
+		<aside>
+			<?php if( $args['link_url'] ): ?>
+				<a href="<?php echo $args['link_url'] ?>">
+			<?php endif; ?>
+				<div class="promo-square" style="background-image: url(<?php echo $args['image'] ?>)">
+					<?php if( $args['header'] ): ?>
+						<h2 class="promo-header"><?php echo $args['header'] ?></h2>
+					<? endif; ?>
+					<?php if( $args['copy'] ): ?>
+						<p class="promo-copy"><?php echo $args['copy'] ?></p>
+					<?php endif; ?>
+					<?php if( $args['link_text'] ): ?>
+						<div class="promo-btn-wrapper">
+							<div class="promo-btn"><?php echo $args['link_text'] ?></div>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php if( $args['link_url'] ): ?>
+				</a>
+			<?php endif; ?>
+		</aside>
 	<?php
 		return ob_get_clean();
 	}
