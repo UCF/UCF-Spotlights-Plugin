@@ -17,10 +17,10 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 				array(
 					'singular'  => 'Promotion',
 					'plural'    => 'Promotions',
-					'post_type' => 'ucf_promos'
+					'post_type' => 'ucf_promo'
 				)
 			);
-			register_post_type( 'promo', self::args( $labels ) );
+			register_post_type( 'ucf_promo', self::args( $labels ) );
 			add_action( 'add_meta_boxes', array( 'UCF_Promo_PostType', 'register_metabox' ) );
 			add_action( 'save_post', array( 'UCF_Promo_PostType', 'save_metabox' ) );
 		}
@@ -36,7 +36,7 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 				'ucf_promo_metabox',
 				'Promotion Details',
 				array( 'UCF_Promo_PostType', 'register_metafields' ),
-				'promo',
+				'ucf_promo',
 				'normal',
 				'high'
 			);
@@ -50,7 +50,6 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		 * @param $post WP_POST object
 		 **/
 		public static function register_metafields( $post ) {
-			// wp_enqueue_script('jquery-ui-datepicker');
 			wp_nonce_field( 'ucf_promo_nonce_save', 'ucf_promo_nonce' );
 			$header = get_post_meta( $post->ID, 'ucf_promo_header', TRUE );
 			$copy = get_post_meta( $post->ID, 'ucf_promo_copy', TRUE );
@@ -109,7 +108,7 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		public static function save_metabox( $post_id ) {
 			$post_type = get_post_type( $post_id );
 			// If this isn't a promo, return.
-			if ( "promo" !== $post_type ) return;
+			if ( 'ucf_promo' !== $post_type ) return;
 			if ( isset( $_POST['ucf_promo_header'] ) ) {
 				// Ensure field is valid.
 				$header = sanitize_text_field( $_POST['ucf_promo_header'] );

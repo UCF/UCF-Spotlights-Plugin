@@ -1,6 +1,7 @@
 // Variables
 $ucf-gold: #ffc904;
-$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', sans-serif !default;
+$font-family-sans-serif: sans-serif !default;
+$font-family-condensed: Helvetica, Arial, sans-serif;
 
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
@@ -10,13 +11,13 @@ $screen-lg-min: 1200px;
 .promo-vertical,
 .promo-square {
 
-  h2,
-  p,
-  a {
+  .promo-header,
+  .promo-copy,
+  .promo-link {
     font-family: $font-family-sans-serif;
   }
 
-  .btn {
+  .promo-btn {
     background-color: $ucf-gold;
     border-radius: 0;
     color: #000;
@@ -32,9 +33,9 @@ $screen-lg-min: 1200px;
 .promo-horizontal {
   padding: 30px;
 
-  h2 {
+  .promo-header {
     color: #fff;
-    font-family: 'Knockout 49 A','Knockout 49 B',Helvetica,Arial,sans-serif;
+    font-family: $font-family-condensed;
     font-size: 50px !important;
     font-weight: 400;
     letter-spacing: .2em;
@@ -52,7 +53,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  p {
+  .promo-copy {
     color: #fff;
     font-size: 14px;
     margin-bottom: 24px;
@@ -62,7 +63,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  a {
+  .promo-link {
     border-bottom: 0 !important;
     color: $ucf-gold !important;
     display: block;
@@ -85,37 +86,37 @@ $screen-lg-min: 1200px;
   padding: 40px;
   position: relative;
 
-  h2,
-  p,
-  a {
+  .promo-header,
+  .promo-copy,
+  .promo-link {
     color: #fff;
     text-align: center;
   }
 
-  h2 {
+  .promo-header {
     font-size: 26px !important;
     margin-bottom: 15px;
     text-shadow: 2px 2px 3px #666;
   }
 
-  p {
+  .promo-copy {
     font-size: 16px;
   }
 
-  .btn {
+  .promo-btn {
     transition: background-color .4s, color .4s;
     width: 213px;
   }
 
-  &:hover .btn,
-  .btn:hover {
+  &:hover .promo-btn,
+  .promo-btn:hover {
     background: #000;
     color: #fff;
     text-decoration: none;
     transition: background-color .4s, color .4s;
   }
 
-  .btn-wrapper {
+  .promo-btn-wrapper {
     bottom: 30px;
     left: 50%;
     margin-left: -107px;
@@ -127,24 +128,24 @@ $screen-lg-min: 1200px;
 // Vertical promo layout
 .promo-vertical {
 
-  img {
+  .promo-image {
     max-width: 100%;
   }
 
-  h2,
-  p {
+  .promo-header,
+  .promo-copy {
     color: #000;
   }
 
-  h2 {
+  .promo-header {
     font-size: 26px !important;
     margin: 40px 0 15px;
   }
 
-  p {
+  .promo-copy {
     font-size: 16px;
 
-    a {
+    .promo-link {
       border-bottom: 0 !important;
       color: #337ab7;
 
@@ -154,7 +155,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  .btn {
+  .promo-btn {
     border-bottom: 0 !important;
     transition: background-color .4s, color .4s;
 
