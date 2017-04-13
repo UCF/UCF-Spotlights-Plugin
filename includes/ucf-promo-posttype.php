@@ -203,13 +203,9 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 			return $args;
 		}
 		public static function taxonomies() {
-			$retval = array(
-				'post_tag',
-				'program_types',
-				'colleges',
-				'career_paths'
-			);
+			$retval = array();
 			$retval = apply_filters( 'ucf_promo_taxonomies', $retval );
+
 			foreach( $retval as $taxonomy ) {
 				if ( ! taxonomy_exists( $taxonomy ) ) {
 					unset( $retval[$taxonomy] );
