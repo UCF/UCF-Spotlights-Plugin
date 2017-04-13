@@ -119,7 +119,7 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 			}
 			if ( isset( $_POST['ucf_promo_copy'] ) ) {
 				// Ensure field is valid.
-				$copy = sanitize_text_field( $_POST['ucf_promo_copy'] );
+				$copy = $_POST['ucf_promo_copy'];
 				if ( $copy ) {
 					update_post_meta( $post_id, 'ucf_promo_copy', $copy );
 				}

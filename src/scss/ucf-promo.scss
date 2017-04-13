@@ -13,7 +13,6 @@ $screen-lg-min: 1200px;
   h2,
   p,
   a {
-    color: #fff;
     font-family: $font-family-sans-serif;
   }
 
@@ -34,6 +33,7 @@ $screen-lg-min: 1200px;
   padding: 30px;
 
   h2 {
+    color: #fff;
     font-family: 'Knockout 49 A','Knockout 49 B',Helvetica,Arial,sans-serif;
     font-size: 50px !important;
     font-weight: 400;
@@ -53,6 +53,7 @@ $screen-lg-min: 1200px;
   }
 
   p {
+    color: #fff;
     font-size: 14px;
     margin-bottom: 24px;
 
@@ -87,6 +88,7 @@ $screen-lg-min: 1200px;
   h2,
   p,
   a {
+    color: #fff;
     text-align: center;
   }
 
@@ -141,6 +143,15 @@ $screen-lg-min: 1200px;
 
   p {
     font-size: 16px;
+
+    a {
+      border-bottom: 0 !important;
+      color: #337ab7;
+
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
   }
 
   .btn {
