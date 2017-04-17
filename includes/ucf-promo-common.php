@@ -30,14 +30,16 @@ if ( ! function_exists( 'ucf_promo_display' ) ) {
 	function ucf_promo_display( $attr ) {
 		// get post with $title
 		if( !empty( $attr['title'] ) ) {
-			$post = get_page_by_title( $attr['title'], OBJECT, 'promo' );
+			$post = get_page_by_title( $attr['title'], OBJECT, 'ucf_promo' );
+
+			$promo_image = ( $thumb = get_post_thumbnail_id( $post->ID ) ) ? array_shift( wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' ) ) : NULL;
 
 			$args = array(
 				'header'    => get_post_meta( $post->ID, "ucf_promo_header", True ),
 				'copy'      => get_post_meta( $post->ID, "ucf_promo_copy", True ),
 				'link_text' => get_post_meta( $post->ID, "ucf_promo_link_text", True ),
 				'link_url'  => get_post_meta( $post->ID, "ucf_promo_link_url", True ),
-				'image'     => array_shift( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ) ),
+				'image'     => $promo_image,
 			);
 
 			switch ( $attr['layout'] ) {
@@ -73,13 +75,13 @@ if ( ! function_exists( 'ucf_promo_horizontal' ) ) {
 				<div class="row">
 					<div class="col-md-8 col-sm-12">
 						<?php if( $args['header'] ): ?>
-							<h2><?php echo $args['header'] ?></h2>
+							<h2 class="promo-header"><?php echo $args['header'] ?></h2>
 						<? endif; ?>
 						<?php if( $args['copy'] ): ?>
-							<p><?php echo $args['copy'] ?></p>
+							<p class="promo-copy"><?php echo $args['copy'] ?></p>
 						<? endif ?>
 						<?php if( $args['link_url'] && $args['link_text'] ): ?>
-							<a href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
+							<a class="promo-link" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -101,20 +103,22 @@ if ( ! function_exists( 'ucf_promo_vertical' ) ) {
 	function ucf_promo_vertical( $args ) {
 		ob_start();
 	?>
-		<div class="promo-vertical">
-			<?php if( $args['image'] ): ?>
-				<img src="<?php echo $args['image'] ?>" alt="">
-			<? endif; ?>
-			<?php if( $args['header'] ): ?>
-				<h2><?php echo $args['header'] ?></h2>
-			<? endif; ?>
-			<?php if( $args['copy'] ): ?>
-				<p><?php echo $args['copy'] ?></p>
-			<?php endif; ?>
-			<?php if( $args['link_url'] && $args['link_text'] ): ?>
-				<a class="btn" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
-			<?php endif; ?>
-		</div>
+		<aside>
+			<div class="promo-vertical">
+				<?php if( $args['image'] ): ?>
+					<img class="promo-image" src="<?php echo $args['image'] ?>" alt="">
+				<? endif; ?>
+				<?php if( $args['header'] ): ?>
+					<h2 class="promo-header"><?php echo $args['header'] ?></h2>
+				<? endif; ?>
+				<?php if( $args['copy'] ): ?>
+					<p class="promo-copy"><?php echo $args['copy'] ?></p>
+				<?php endif; ?>
+				<?php if( $args['link_url'] && $args['link_text'] ): ?>
+					<a class="promo-btn" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
+				<?php endif; ?>
+			</div>
+		</aside>
 	<?php
 		return ob_get_clean();
 	}
@@ -131,25 +135,27 @@ if ( ! function_exists( 'ucf_promo_square' ) ) {
 	function ucf_promo_square( $args ) {
 		ob_start();
 	?>
-		<?php if( $args['link_url'] ): ?>
-			<a href="<?php echo $args['link_url'] ?>">
-		<?php endif; ?>
-			<div class="promo-square" style="background-image: url(<?php echo $args['image'] ?>)">
-				<?php if( $args['header'] ): ?>
-					<h2><?php echo $args['header'] ?></h2>
-				<? endif; ?>
-				<?php if( $args['copy'] ): ?>
-					<p><?php echo $args['copy'] ?></p>
-				<?php endif; ?>
-				<?php if( $args['link_text'] ): ?>
-					<div class="btn-wrapper">
-						<div class="btn"><?php echo $args['link_text'] ?></div>
-					</div>
-				<?php endif; ?>
-			</div>
-		<?php if( $args['link_url'] ): ?>
-			</a>
-		<?php endif; ?>
+		<aside>
+			<?php if( $args['link_url'] ): ?>
+				<a href="<?php echo $args['link_url'] ?>">
+			<?php endif; ?>
+				<div class="promo-square" style="background-image: url(<?php echo $args['image'] ?>)">
+					<?php if( $args['header'] ): ?>
+						<h2 class="promo-header"><?php echo $args['header'] ?></h2>
+					<? endif; ?>
+					<?php if( $args['copy'] ): ?>
+						<p class="promo-copy"><?php echo $args['copy'] ?></p>
+					<?php endif; ?>
+					<?php if( $args['link_text'] ): ?>
+						<div class="promo-btn-wrapper">
+							<div class="promo-btn"><?php echo $args['link_text'] ?></div>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php if( $args['link_url'] ): ?>
+				</a>
+			<?php endif; ?>
+		</aside>
 	<?php
 		return ob_get_clean();
 	}
