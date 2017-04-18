@@ -7,17 +7,17 @@ $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 
 // Common to all three layouts
-.promo-horizontal,
-.promo-vertical,
-.promo-square {
+.spotlight-horizontal,
+.spotlight-vertical,
+.spotlight-square {
 
-  .promo-header,
-  .promo-copy,
-  .promo-link {
+  .spotlight-header,
+  .spotlight-copy,
+  .spotlight-link {
     font-family: $font-family-sans-serif;
   }
 
-  .promo-btn {
+  .spotlight-btn {
     background-color: $ucf-gold;
     border-radius: 0;
     color: #000;
@@ -29,11 +29,11 @@ $screen-lg-min: 1200px;
   }
 }
 
-// Horizontal promo layout
-.promo-horizontal {
+// Horizontal spotlight layout
+.spotlight-horizontal {
   padding: 30px;
 
-  .promo-header {
+  .spotlight-header {
     color: #fff;
     font-family: $font-family-condensed;
     font-size: 50px !important;
@@ -53,7 +53,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  .promo-copy {
+  .spotlight-copy {
     color: #fff;
     font-size: 14px;
     margin-bottom: 24px;
@@ -63,7 +63,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  .promo-link {
+  .spotlight-link {
     border-bottom: 0 !important;
     color: $ucf-gold !important;
     display: block;
@@ -78,45 +78,45 @@ $screen-lg-min: 1200px;
   }
 }
 
-// Square promo layout
-.promo-square {
+// Square spotlight layout
+.spotlight-square {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 293px;
   padding: 40px;
   position: relative;
 
-  .promo-header,
-  .promo-copy,
-  .promo-link {
+  .spotlight-header,
+  .spotlight-copy,
+  .spotlight-link {
     color: #fff;
     text-align: center;
   }
 
-  .promo-header {
+  .spotlight-header {
     font-size: 26px !important;
     margin-bottom: 15px;
     text-shadow: 2px 2px 3px #666;
   }
 
-  .promo-copy {
+  .spotlight-copy {
     font-size: 16px;
   }
 
-  .promo-btn {
+  .spotlight-btn {
     transition: background-color .4s, color .4s;
     width: 213px;
   }
 
-  &:hover .promo-btn,
-  .promo-btn:hover {
+  &:hover .spotlight-btn,
+  .spotlight-btn:hover {
     background: #000;
     color: #fff;
     text-decoration: none;
     transition: background-color .4s, color .4s;
   }
 
-  .promo-btn-wrapper {
+  .spotlight-btn-wrapper {
     bottom: 30px;
     left: 50%;
     margin-left: -107px;
@@ -125,27 +125,26 @@ $screen-lg-min: 1200px;
   }
 }
 
-// Vertical promo layout
-.promo-vertical {
+// Vertical spotlight layout
+.spotlight-vertical {
 
-  .promo-image {
+  .spotlight-image {
     max-width: 100%;
   }
 
-  .promo-header,
-  .promo-copy {
+  .spotlight-header,
+  .spotlight-copy {
     color: #000;
   }
 
-  .promo-header {
+  .spotlight-header {
     font-size: 26px !important;
-    margin: 40px 0 15px;
   }
 
-  .promo-copy {
+  .spotlight-copy {
     font-size: 16px;
 
-    .promo-link {
+    .spotlight-link {
       border-bottom: 0 !important;
       color: #337ab7;
 
@@ -155,7 +154,7 @@ $screen-lg-min: 1200px;
     }
   }
 
-  .promo-btn {
+  .spotlight-btn {
     border-bottom: 0 !important;
     transition: background-color .4s, color .4s;
 

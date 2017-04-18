@@ -1,11 +1,11 @@
 <?php
 /**
- * Handles the registration of the promo custom post type.
+ * Handles the registration of the spotlight custom post type.
  * @author RJ Bruneel
  * @since 1.0.0
  **/
-if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
-	class UCF_Promo_PostType {
+if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
+	class UCF_Spotlight_PostType {
 		/**
 		 * Registers the custom post type.
 		 * @author RJ Bruneel
@@ -13,30 +13,30 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		 **/
 		public static function register() {
 			$labels = apply_filters(
-				'ucf_promo_labels',
+				'ucf_spotlight_labels',
 				array(
-					'singular'  => 'Promotion',
-					'plural'    => 'Promotions',
-					'post_type' => 'ucf_promo'
+					'singular'  => 'Spotlight',
+					'plural'    => 'Spotlight',
+					'post_type' => 'ucf_spotlight'
 				)
 			);
-			register_post_type( 'ucf_promo', self::args( $labels ) );
-			add_action( 'add_meta_boxes', array( 'UCF_Promo_PostType', 'register_metabox' ) );
-			add_action( 'save_post', array( 'UCF_Promo_PostType', 'save_metabox' ) );
+			register_post_type( 'ucf_spotlight', self::args( $labels ) );
+			add_action( 'add_meta_boxes', array( 'UCF_Spotlight_PostType', 'register_metabox' ) );
+			add_action( 'save_post', array( 'UCF_Spotlight_PostType', 'save_metabox' ) );
 		}
 
 
 		/**
-		 * Adds a metabox to the promo custom post type.
+		 * Adds a metabox to the spotlight custom post type.
 		 * @author RJ Bruneel
 		 * @since 1.0.0
 		 **/
 		public static function register_metabox() {
 			add_meta_box(
-				'ucf_promo_metabox',
-				'Promotion Details',
-				array( 'UCF_Promo_PostType', 'register_metafields' ),
-				'ucf_promo',
+				'ucf_spotlight_metabox',
+				'Spotlight Details',
+				array( 'UCF_Spotlight_PostType', 'register_metafields' ),
+				'ucf_spotlight',
 				'normal',
 				'high'
 			);
@@ -50,48 +50,48 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		 * @param $post WP_POST object
 		 **/
 		public static function register_metafields( $post ) {
-			wp_nonce_field( 'ucf_promo_nonce_save', 'ucf_promo_nonce' );
-			$header = get_post_meta( $post->ID, 'ucf_promo_header', TRUE );
-			$copy = get_post_meta( $post->ID, 'ucf_promo_copy', TRUE );
-			$link_text = get_post_meta( $post->ID, 'ucf_promo_link_text', TRUE );
-			$link_url = get_post_meta( $post->ID, 'ucf_promo_link_url', TRUE );
+			wp_nonce_field( 'ucf_spotlight_nonce_save', 'ucf_spotlight_nonce' );
+			$header = get_post_meta( $post->ID, 'ucf_spotlight_header', TRUE );
+			$copy = get_post_meta( $post->ID, 'ucf_spotlight_copy', TRUE );
+			$link_text = get_post_meta( $post->ID, 'ucf_spotlight_link_text', TRUE );
+			$link_url = get_post_meta( $post->ID, 'ucf_spotlight_link_url', TRUE );
 ?>
 			<table class="form-table">
 				<tbody>
 					<tr>
 						<th>
-							<label class="block" for="ucf_promo_header"><strong>Header</strong></label>
+							<label class="block" for="ucf_spotlight_header"><strong>Header</strong></label>
 						</th>
 						<td>
-							<p class="description">(Optional) Large header displayed at the top of the promo.</p>
-							<input type="text" id="ucf_promo_header" name="ucf_promo_header" class="regular-text" <?php echo ( ! empty( $header ) ) ? 'value="' . $header . '"' : ''; ?>>
+							<p class="description">(Optional) Large header displayed at the top of the spotlight.</p>
+							<input type="text" id="ucf_spotlight_header" name="ucf_spotlight_header" class="regular-text" <?php echo ( ! empty( $header ) ) ? 'value="' . $header . '"' : ''; ?>>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							<label class="block" for="ucf_promo_copy"><strong>Copy</strong></label>
+							<label class="block" for="ucf_spotlight_copy"><strong>Copy</strong></label>
 						</th>
 						<td>
 							<p class="description">(Optional) Copy displayed under the large header.</p>
-							<textarea id="ucf_promo_copy" name="ucf_promo_copy" cols="46" rows="5"><?php echo ( ! empty( $copy ) ) ? $copy : ''; ?></textarea>
+							<textarea id="ucf_spotlight_copy" name="ucf_spotlight_copy" cols="46" rows="5"><?php echo ( ! empty( $copy ) ) ? $copy : ''; ?></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							<label class="block" for="ucf_promo_link_text"><strong>Link Text</strong></label>
+							<label class="block" for="ucf_spotlight_link_text"><strong>Link Text</strong></label>
 						</th>
 						<td>
 							<p class="description">(Optional) Text displayed within the link under the copy.</p>
-							<input type="text" id="ucf_promo_link_text" name="ucf_promo_link_text" class="regular-text" <?php echo ( ! empty( $link_text ) ) ? 'value="' . $link_text . '"' : ''; ?>>
+							<input type="text" id="ucf_spotlight_link_text" name="ucf_spotlight_link_text" class="regular-text" <?php echo ( ! empty( $link_text ) ) ? 'value="' . $link_text . '"' : ''; ?>>
 						</td>
 					</tr>
 					<tr>
 						<th>
-							<label class="block" for="ucf_promo_link_url"><strong>Link URL</strong></label>
+							<label class="block" for="ucf_spotlight_link_url"><strong>Link URL</strong></label>
 						</th>
 						<td>
 							<p class="description">(Optional) URL of the link.</p>
-							<input type="text" id="ucf_promo_link_url" name="ucf_promo_link_url" class="regular-text" <?php echo ( ! empty( $link_url ) ) ? 'value="' . $link_url . '"' : ''; ?>>
+							<input type="text" id="ucf_spotlight_link_url" name="ucf_spotlight_link_url" class="regular-text" <?php echo ( ! empty( $link_url ) ) ? 'value="' . $link_url . '"' : ''; ?>>
 						</td>
 					</tr>
 				</tbody>
@@ -107,34 +107,34 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 		 **/
 		public static function save_metabox( $post_id ) {
 			$post_type = get_post_type( $post_id );
-			// If this isn't a promo, return.
-			if ( 'ucf_promo' !== $post_type ) return;
-			if ( isset( $_POST['ucf_promo_header'] ) ) {
+			// If this isn't a spotlight, return.
+			if ( 'ucf_spotlight' !== $post_type ) return;
+			if ( isset( $_POST['ucf_spotlight_header'] ) ) {
 				// Ensure field is valid.
-				$header = sanitize_text_field( $_POST['ucf_promo_header'] );
+				$header = sanitize_text_field( $_POST['ucf_spotlight_header'] );
 				if ( $header ) {
-					update_post_meta( $post_id, 'ucf_promo_header', $header );
+					update_post_meta( $post_id, 'ucf_spotlight_header', $header );
 				}
 			}
-			if ( isset( $_POST['ucf_promo_copy'] ) ) {
+			if ( isset( $_POST['ucf_spotlight_copy'] ) ) {
 				// Ensure field is valid.
-				$copy = $_POST['ucf_promo_copy'];
+				$copy = $_POST['ucf_spotlight_copy'];
 				if ( $copy ) {
-					update_post_meta( $post_id, 'ucf_promo_copy', $copy );
+					update_post_meta( $post_id, 'ucf_spotlight_copy', $copy );
 				}
 			}
-			if ( isset( $_POST['ucf_promo_link_text'] ) ) {
+			if ( isset( $_POST['ucf_spotlight_link_text'] ) ) {
 				// Ensure field is valid.
-				$link_text = sanitize_text_field( $_POST['ucf_promo_link_text'] );
+				$link_text = sanitize_text_field( $_POST['ucf_spotlight_link_text'] );
 				if ( $link_text ) {
-					update_post_meta( $post_id, 'ucf_promo_link_text', $link_text );
+					update_post_meta( $post_id, 'ucf_spotlight_link_text', $link_text );
 				}
 			}
-			if ( isset( $_POST['ucf_promo_link_url'] ) ) {
+			if ( isset( $_POST['ucf_spotlight_link_url'] ) ) {
 				// Ensure field is valid.
-				$link_url = sanitize_text_field( $_POST['ucf_promo_link_url'] );
+				$link_url = sanitize_text_field( $_POST['ucf_spotlight_link_url'] );
 				if ( $link_url ) {
-					update_post_meta( $post_id, 'ucf_promo_link_url', $link_url );
+					update_post_meta( $post_id, 'ucf_spotlight_link_url', $link_url );
 				}
 			}
 		}
@@ -180,8 +180,8 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 
 		public static function args() {
 			$args = array(
-				'label'                 => __( 'Promotion', 'ucf_promo' ),
-				'description'           => __( 'Promotions', 'ucf_promo' ),
+				'label'                 => __( 'Spotlight', 'ucf_spotlight' ),
+				'description'           => __( 'Spotlights', 'ucf_spotlight' ),
 				'labels'                => self::labels( $singular, $plural, $post_type ),
 				'supports'              => array( 'title', 'thumbnail', 'revisions', ),
 				'taxonomies'            => self::taxonomies(),
@@ -199,12 +199,12 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 				'publicly_queryable'    => true,
 				'capability_type'       => 'post',
 			);
-			$args = apply_filters( 'ucf_promo_post_type_args', $args );
+			$args = apply_filters( 'ucf_spotlight_post_type_args', $args );
 			return $args;
 		}
 		public static function taxonomies() {
 			$retval = array();
-			$retval = apply_filters( 'ucf_promo_taxonomies', $retval );
+			$retval = apply_filters( 'ucf_spotlight_taxonomies', $retval );
 
 			foreach( $retval as $taxonomy ) {
 				if ( ! taxonomy_exists( $taxonomy ) ) {
@@ -214,6 +214,6 @@ if ( ! class_exists( 'UCF_Promo_PostType' ) ) {
 			return $retval;
 		}
 	}
-    add_action( 'init', array( 'UCF_Promo_PostType', 'register' ), 10, 0 );
+    add_action( 'init', array( 'UCF_Spotlight_PostType', 'register' ), 10, 0 );
 }
 ?>
