@@ -23,14 +23,21 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 * Returns the spotlight HTML to be displayed on the page.
 * @author RJ Bruneel
 * @since 1.0.0
-* @param $attr string | title of the spotlight post type and one of three layouts.
+* @param $attr string | slug of the spotlight post type and one of three layouts.
 * @return String
 **/
 if ( ! function_exists( 'ucf_spotlight_display' ) ) {
 	function ucf_spotlight_display( $attr ) {
-		// get post with $title
-		if( !empty( $attr['title'] ) ) {
-			$post = get_page_by_title( $attr['title'], OBJECT, 'ucf_spotlight' );
+		// get post with $slug
+		if( !empty( $attr['slug'] ) ) {
+
+			$args = array(
+				'name'        => $attr['slug'],
+				'post_type'   => 'ucf_spotlight',
+				'post_status' => 'publish',
+				'numberposts' => 1
+			);
+			$post = array_shift( get_posts( $args ) );
 
 			$spotlight_image = ( $thumb = get_post_thumbnail_id( $post->ID ) ) ? array_shift( wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' ) ) : NULL;
 

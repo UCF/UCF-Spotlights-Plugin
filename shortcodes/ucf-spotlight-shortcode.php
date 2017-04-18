@@ -9,7 +9,7 @@ if ( ! class_exists( 'UCF_Spotlight_Shortcode' ) ) {
 	class UCF_Spotlight_Shortcode {
 		public static function shortcode( $atts ) {
 			$atts = shortcode_atts( array(
-				'title'  => '',
+				'slug'  => '',
 				'layout' => '',
 			), $atts );
 
