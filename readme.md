@@ -7,12 +7,8 @@ Provides a shortcode, functions, and default styles for displaying Spotlights.
 
 Adds a new post type called Spotlights that can be added to pages using a ucf-spotlight shortcode. Spotlights may optionally contain a header, copy, link and featured images.
 
-The ucf-spotlight shortcode has two options:
+The ucf-spotlight shortcode has one option:
 * slug - the slug of the spotlight to be displayed
-* layout - one of three layouts are available
-    * vertical
-    * horizontal
-    * square
 
 
 ## Installation ##

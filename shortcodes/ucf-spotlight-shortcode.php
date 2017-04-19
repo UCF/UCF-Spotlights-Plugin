@@ -10,7 +10,6 @@ if ( ! class_exists( 'UCF_Spotlight_Shortcode' ) ) {
 		public static function shortcode( $atts ) {
 			$atts = shortcode_atts( array(
 				'slug'  => '',
-				'layout' => '',
 			), $atts );
 
 			return UCF_Spotlight_Common::display_spotlight( $atts );

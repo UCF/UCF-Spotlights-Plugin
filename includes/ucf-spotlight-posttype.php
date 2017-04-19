@@ -51,6 +51,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 		 **/
 		public static function register_metafields( $post ) {
 			wp_nonce_field( 'ucf_spotlight_nonce_save', 'ucf_spotlight_nonce' );
+			$layout = get_post_meta( $post->ID, 'ucf_spotlight_layout', TRUE );
 			$header = get_post_meta( $post->ID, 'ucf_spotlight_header', TRUE );
 			$copy = get_post_meta( $post->ID, 'ucf_spotlight_copy', TRUE );
 			$link_text = get_post_meta( $post->ID, 'ucf_spotlight_link_text', TRUE );
@@ -60,7 +61,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 				<tbody>
 					<tr>
 						<th>
-							<label class="block"><strong>Shortcode</strong></label>
+							<strong>Shortcode</strong>
 						</th>
 						<td>
 							<p class="description">
@@ -70,10 +71,15 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 					</tr>
 					<tr>
 						<th>
-							<label class="block"><strong>Featured Image Sizes</strong></label>
+							<label class="block" for="ucf_spotlight_layout"><strong>Layout</strong></label>
 						</th>
 						<td>
-							<p class="description">Vertical - 320x400, Horizontal - 1100x400, Square - 650x300</p>
+							<p class="description">One of three layout options depicting the appearance.</p>
+							<select id="ucf_spotlight_layout" name="ucf_spotlight_layout" class="regular-text">
+								<option value="square"<?php echo ( $layout == 'square' ) ? ' selected' : ''; ?>>Square - Feature Image Size: 650x300</option>
+								<option value="vertical"<?php echo ( $layout == 'vertical' ) ? ' selected' : ''; ?>>Vertical - Feature Image Size: 320x400</option>
+								<option value="horizontal"<?php echo ( $layout == 'horizontal' ) ? ' selected' : ''; ?>>Horizontal - Feature Image Size: 1100x400</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
@@ -127,6 +133,15 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 			$post_type = get_post_type( $post_id );
 			// If this isn't a spotlight, return.
 			if ( 'ucf_spotlight' !== $post_type ) return;
+
+			if ( isset( $_POST['ucf_spotlight_layout'] ) ) {
+				// Ensure field is valid.
+				$layout = $_POST['ucf_spotlight_layout'];
+				if ( $layout ) {
+					update_post_meta( $post_id, 'ucf_spotlight_layout', $layout );
+				}
+			}
+
 			if ( isset( $_POST['ucf_spotlight_header'] ) ) {
 				// Ensure field is valid.
 				$header = sanitize_text_field( $_POST['ucf_spotlight_header'] );
@@ -134,6 +149,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 					update_post_meta( $post_id, 'ucf_spotlight_header', $header );
 				}
 			}
+
 			if ( isset( $_POST['ucf_spotlight_copy'] ) ) {
 				// Ensure field is valid.
 				$copy = $_POST['ucf_spotlight_copy'];
@@ -141,6 +157,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 					update_post_meta( $post_id, 'ucf_spotlight_copy', $copy );
 				}
 			}
+
 			if ( isset( $_POST['ucf_spotlight_link_text'] ) ) {
 				// Ensure field is valid.
 				$link_text = sanitize_text_field( $_POST['ucf_spotlight_link_text'] );
@@ -148,6 +165,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 					update_post_meta( $post_id, 'ucf_spotlight_link_text', $link_text );
 				}
 			}
+
 			if ( isset( $_POST['ucf_spotlight_link_url'] ) ) {
 				// Ensure field is valid.
 				$link_url = sanitize_text_field( $_POST['ucf_spotlight_link_url'] );

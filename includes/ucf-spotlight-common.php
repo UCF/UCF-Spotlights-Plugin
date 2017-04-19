@@ -44,6 +44,7 @@ if ( ! function_exists( 'ucf_spotlight_display' ) ) {
 			$spotlight_image = ( $thumb = get_post_thumbnail_id( $post->ID ) ) ? array_shift( wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' ) ) : NULL;
 
 			$args = array(
+				'layout'    => get_post_meta( $post->ID, "ucf_spotlight_layout", True ),
 				'header'    => get_post_meta( $post->ID, "ucf_spotlight_header", True ),
 				'copy'      => get_post_meta( $post->ID, "ucf_spotlight_copy", True ),
 				'link_text' => get_post_meta( $post->ID, "ucf_spotlight_link_text", True ),
@@ -51,7 +52,7 @@ if ( ! function_exists( 'ucf_spotlight_display' ) ) {
 				'image'     => $spotlight_image,
 			);
 
-			switch ( $attr['layout'] ) {
+			switch ( $args['layout'] ) {
 				case "horizontal":
 					return ucf_spotlight_horizontal( $args );
 				case "vertical":
