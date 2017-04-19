@@ -7,7 +7,9 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 	class UCF_Spotlight_Common {
 
 		public function enqueue_styles() {
-			wp_enqueue_style( 'ucf_spotlight_css', plugins_url( 'static/css/ucf-spotlight.min.css', UCF_SPOTLIGHT__PLUGIN_FILE ), false, false, 'all' );
+			if ( get_option( 'ucf_spotlight_include_css' ) ) {
+				wp_enqueue_style( 'ucf_spotlight_css', plugins_url( 'static/css/ucf-spotlight.min.css', UCF_SPOTLIGHT__PLUGIN_FILE ), false, false, 'all' );
+			}
 		}
 
 		public static function display_spotlight( $attr ) {
