@@ -60,6 +60,24 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 				<tbody>
 					<tr>
 						<th>
+							<label class="block"><strong>Shortcode</strong></label>
+						</th>
+						<td>
+							<p class="description">
+								[ucf-spotlight slug="<?php echo $post->post_name ?>"]
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label class="block"><strong>Featured Image Sizes</strong></label>
+						</th>
+						<td>
+							<p class="description">Vertical - 320x400, Horizontal - 1100x400, Square - 650x300</p>
+						</td>
+					</tr>
+					<tr>
+						<th>
 							<label class="block" for="ucf_spotlight_header"><strong>Header</strong></label>
 						</th>
 						<td>
