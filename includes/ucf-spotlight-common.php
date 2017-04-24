@@ -85,13 +85,13 @@ if ( ! function_exists( 'ucf_spotlight_horizontal' ) ) {
 				<div class="row">
 					<div class="col-md-8 col-sm-12">
 						<?php if( $args['header'] ): ?>
-							<h2 class="spotlight-header"><?php echo $args['header'] ?></h2>
+							<div class="spotlight-header"><?php echo $args['header'] ?></div>
 						<? endif; ?>
 						<?php if( $args['copy'] ): ?>
 							<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
 						<? endif ?>
 						<?php if( $args['link_url'] && $args['link_text'] ): ?>
-							<a class="spotlight-link" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
+							<a class="btn btn-primary" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -119,13 +119,13 @@ if ( ! function_exists( 'ucf_spotlight_vertical' ) ) {
 					<img class="spotlight-image" src="<?php echo $args['image'] ?>" alt="">
 				<? endif; ?>
 				<?php if( $args['header'] ): ?>
-					<h2 class="spotlight-header"><?php echo $args['header'] ?></h2>
+					<div class="spotlight-header"><?php echo $args['header'] ?></div>
 				<? endif; ?>
 				<?php if( $args['copy'] ): ?>
 					<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
 				<?php endif; ?>
 				<?php if( $args['link_url'] && $args['link_text'] ): ?>
-					<a class="spotlight-btn" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
+					<a class="btn btn-primary" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
 				<?php endif; ?>
 			</div>
 		</aside>
@@ -151,14 +151,14 @@ if ( ! function_exists( 'ucf_spotlight_square' ) ) {
 			<?php endif; ?>
 				<div class="spotlight-square" style="background-image: url(<?php echo $args['image'] ?>)">
 					<?php if( $args['header'] ): ?>
-						<h2 class="spotlight-header"><?php echo $args['header'] ?></h2>
+						<div class="spotlight-header"><?php echo $args['header'] ?></div>
 					<? endif; ?>
 					<?php if( $args['copy'] ): ?>
 						<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
 					<?php endif; ?>
 					<?php if( $args['link_text'] ): ?>
 						<div class="spotlight-btn-wrapper">
-							<div class="spotlight-btn"><?php echo $args['link_text'] ?></div>
+							<div class="btn btn-primary"><?php echo $args['link_text'] ?></div>
 						</div>
 					<?php endif; ?>
 				</div>

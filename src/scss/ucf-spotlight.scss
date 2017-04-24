@@ -1,7 +1,6 @@
-// Variables
-$ucf-gold: #ffc904;
-$font-family-sans-serif: sans-serif !default;
-$font-family-condensed: Helvetica, Arial, sans-serif;
+// Copied from Athena
+@import 'variables';
+@import 'mixins';
 
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
@@ -17,16 +16,77 @@ $screen-lg-min: 1200px;
     font-family: $font-family-sans-serif;
   }
 
-  .spotlight-btn {
-    background-color: $ucf-gold;
-    border-radius: 0;
-    color: #000;
-    display: inline-block;
-    font-family: $font-family-sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    padding: 12px 18px;
+  .spotlight-copy {
+
+    .spotlight-link {
+      color: #337ab7;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
+
+  .btn {
+    border: $input-btn-border-width solid transparent;
+    border-width: $btn-border-width;
+    display: inline-block;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    letter-spacing: $letter-spacing-base;
+    line-height: $btn-line-height;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+    @include transition($btn-transition);
+
+    @include media-breakpoint-up(md) {
+      font-size: $btn-font-size-md;
+    }
+
+    // Share hover and focus styles
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &.active,
+    &:active,
+    &.focus,
+    &:focus {
+      border-color: transparent;
+    }
+
+    &:focus,
+    &.focus {
+      color: initial;
+      outline: 0;
+      box-shadow: $btn-focus-box-shadow;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      cursor: $cursor-disabled;
+      opacity: .65;
+      @include box-shadow(none);
+    }
+
+    &:active,
+    &.active {
+      background-image: none;
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+  .btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  }
+
 }
 
 // Horizontal spotlight layout
@@ -36,20 +96,20 @@ $screen-lg-min: 1200px;
   .spotlight-header {
     color: #fff;
     font-family: $font-family-condensed;
-    font-size: 50px !important;
+    font-size: 50px;
     font-weight: 400;
     letter-spacing: .2em;
-    line-height: normal !important;
+    line-height: normal;
     margin-bottom: 25px;
     margin-top: 21px;
     text-transform: uppercase;
 
     @media (min-width: $screen-md-min) {
-      font-size: 60px !important;
+      font-size: 60px;
     }
 
     @media (min-width: $screen-lg-min) {
-      font-size: 70px !important;
+      font-size: 70px;
     }
   }
 
@@ -60,20 +120,6 @@ $screen-lg-min: 1200px;
 
     @media (min-width: $screen-md-min) {
       font-size: 16px;
-    }
-  }
-
-  .spotlight-link {
-    border-bottom: 0 !important;
-    color: $ucf-gold !important;
-    display: block;
-    font-size: 15px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    text-decoration: underline;
-
-    @media (min-width: $screen-md-min) {
-      font-size: 23px;
     }
   }
 }
@@ -87,33 +133,24 @@ $screen-lg-min: 1200px;
   position: relative;
 
   .spotlight-header,
+  .spotlight-copy {
+    color: #fff;
+  }
+
+  .spotlight-header,
   .spotlight-copy,
   .spotlight-link {
-    color: #fff;
     text-align: center;
   }
 
   .spotlight-header {
-    font-size: 26px !important;
+    font-size: 26px;
     margin-bottom: 15px;
     text-shadow: 2px 2px 3px #666;
   }
 
-  .spotlight-copy {
-    font-size: 16px;
-  }
-
-  .spotlight-btn {
-    transition: background-color .4s, color .4s;
+  .btn {
     width: 213px;
-  }
-
-  &:hover .spotlight-btn,
-  .spotlight-btn:hover {
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color .4s, color .4s;
   }
 
   .spotlight-btn-wrapper {
@@ -132,38 +169,8 @@ $screen-lg-min: 1200px;
     max-width: 100%;
   }
 
-  .spotlight-header,
-  .spotlight-copy {
-    color: #000;
-  }
-
   .spotlight-header {
-    font-size: 26px !important;
+    font-size: 26px;
   }
 
-  .spotlight-copy {
-    font-size: 16px;
-
-    .spotlight-link {
-      border-bottom: 0 !important;
-      color: #337ab7;
-
-      &:hover {
-        text-decoration: underline !important;
-      }
-    }
-  }
-
-  .spotlight-btn {
-    border-bottom: 0 !important;
-    transition: background-color .4s, color .4s;
-
-    &:hover {
-      background: #000;
-      border-bottom: 0 !important;
-      color: #fff;
-      text-decoration: none;
-      transition: background-color .4s, color .4s;
-    }
-  }
 }
