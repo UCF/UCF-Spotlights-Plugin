@@ -28,6 +28,9 @@ $screen-lg-min: 1200px;
   }
 
   .btn {
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+    @include transition($btn-transition);
+
     border: $input-btn-border-width solid transparent;
     border-width: $btn-border-width;
     display: inline-block;
@@ -40,9 +43,6 @@ $screen-lg-min: 1200px;
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-
-    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
-    @include transition($btn-transition);
 
     @include media-breakpoint-up(md) {
       font-size: $btn-font-size-md;
@@ -63,23 +63,23 @@ $screen-lg-min: 1200px;
 
     &:focus,
     &.focus {
+      box-shadow: $btn-focus-box-shadow;
       color: initial;
       outline: 0;
-      box-shadow: $btn-focus-box-shadow;
     }
 
     // Disabled comes first so active can properly restyle
     &.disabled,
     &:disabled {
+      @include box-shadow(none);
       cursor: $cursor-disabled;
       opacity: .65;
-      @include box-shadow(none);
     }
 
     &:active,
     &.active {
-      background-image: none;
       @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      background-image: none;
     }
   }
 
@@ -115,12 +115,7 @@ $screen-lg-min: 1200px;
 
   .spotlight-copy {
     color: #fff;
-    font-size: 14px;
     margin-bottom: 24px;
-
-    @media (min-width: $screen-md-min) {
-      font-size: 16px;
-    }
   }
 }
 
@@ -128,6 +123,7 @@ $screen-lg-min: 1200px;
 .spotlight-square {
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   min-height: 293px;
   padding: 40px;
   position: relative;
@@ -145,8 +141,13 @@ $screen-lg-min: 1200px;
 
   .spotlight-header {
     font-size: 26px;
+    font-weight: 900;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 3px #666;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  .spotlight-copy {
+    line-height: 24px;
   }
 
   .btn {
@@ -166,11 +167,14 @@ $screen-lg-min: 1200px;
 .spotlight-vertical {
 
   .spotlight-image {
+    margin-bottom: 24px;
     max-width: 100%;
   }
 
   .spotlight-header {
     font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 12px;
   }
 
 }
