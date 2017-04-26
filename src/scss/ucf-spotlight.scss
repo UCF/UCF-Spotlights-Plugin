@@ -1,6 +1,8 @@
 // Copied from Athena
-@import 'variables';
-@import 'mixins';
+$ucf-gold: #ffc904;
+$ucf-gold-darker: #b18e00;
+$font-family-sans-serif: sans-serif !default;
+$font-family-condensed: Helvetica, Arial, sans-serif;
 
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
@@ -28,69 +30,41 @@ $screen-lg-min: 1200px;
   }
 
   .btn {
-    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
-    @include transition($btn-transition);
-
-    border: $input-btn-border-width solid transparent;
-    border-width: $btn-border-width;
+    background-color: $ucf-gold;
+    border: 1px solid transparent;
+    border-color: $ucf-gold;
+    border-radius: 0;
+    border-width: 3px;
+    color: #000;
     display: inline-block;
-    font-size: $btn-font-size;
-    font-weight: $btn-font-weight;
-    letter-spacing: $letter-spacing-base;
-    line-height: $btn-line-height;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    line-height: 1.25;
+    padding: .75rem 1.25rem;
     text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
+    transition: all .2s ease-in-out;
     user-select: none;
     vertical-align: middle;
-    white-space: nowrap;
+    white-space: normal;
 
-    @include media-breakpoint-up(md) {
-      font-size: $btn-font-size-md;
-    }
-
-    // Share hover and focus styles
-    @include hover-focus {
+    &:hover {
+      background-color: $ucf-gold-darker;
+      border-color: $ucf-gold-darker;
+      color: #fff;
       text-decoration: none;
     }
-
-    &:hover,
-    &.active,
-    &:active,
-    &.focus,
-    &:focus {
-      border-color: transparent;
-    }
-
-    &:focus,
-    &.focus {
-      box-shadow: $btn-focus-box-shadow;
-      color: initial;
-      outline: 0;
-    }
-
-    // Disabled comes first so active can properly restyle
-    &.disabled,
-    &:disabled {
-      @include box-shadow(none);
-      cursor: $cursor-disabled;
-      opacity: .65;
-    }
-
-    &:active,
-    &.active {
-      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-      background-image: none;
-    }
-  }
-
-  .btn-primary {
-    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
   }
 
 }
 
 // Horizontal spotlight layout
 .spotlight-horizontal {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 30px;
 
   .spotlight-header {
@@ -147,19 +121,15 @@ $screen-lg-min: 1200px;
   }
 
   .spotlight-copy {
-    line-height: 24px;
-  }
-
-  .btn {
-    width: 213px;
+    line-height: 1.4;
   }
 
   .spotlight-btn-wrapper {
     bottom: 30px;
     left: 50%;
-    margin-left: -107px;
     position: absolute;
     text-align: center;
+    transform: translateX(-50%);
   }
 }
 
