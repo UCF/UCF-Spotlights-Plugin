@@ -1,18 +1,14 @@
-# UCF Promotions #
+# UCF Spotlights #
 
-Provides a shortcode, functions, and default styles for displaying Promos.
+Provides a shortcode, functions, and default styles for displaying Spotlights.
 
 
 ## Description ##
 
-Adds a new post type called Promotions that can be added to pages using a ucf-promo shortcode. Promotions may optionally contain a header, copy, link and featured images.
+Adds a new post type called Spotlights that can be added to pages using a ucf-spotlight shortcode. Spotlights may optionally contain a header, copy, link and featured images.
 
-The ucf-promo shortcode has two options:
-* title - the title of the promotion to be displayed
-* layout - one of three layouts are available
-    * vertical
-    * horizontal
-    * square
+The ucf-spotlight shortcode has one option:
+* slug - the slug of the spotlight to be displayed
 
 
 ## Installation ##
@@ -22,7 +18,7 @@ The ucf-promo shortcode has two options:
 2. Activate the plugin through the "Plugins" screen in WordPress
 
 ### WP CLI Installation ###
-1. `$ wp plugin install --activate https://github.com/UCF/UCF-Promo-Plugin/archive/master.zip`.  See [WP-CLI Docs](http://wp-cli.org/commands/plugin/install/) for more command options.
+1. `$ wp plugin install --activate https://github.com/UCF/UCF-Spotlight-Plugin/archive/master.zip`.  See [WP-CLI Docs](http://wp-cli.org/commands/plugin/install/) for more command options.
 
 
 
