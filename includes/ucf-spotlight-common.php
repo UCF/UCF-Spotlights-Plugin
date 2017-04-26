@@ -24,7 +24,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 		* @param $attr string | slug of the spotlight post type and one of three layouts.
 		* @return String
 		**/
-		function ucf_spotlight_display( $attr ) {
+		private static function ucf_spotlight_display( $attr ) {
 			// get post with $slug
 			if( !empty( $attr['slug'] ) ) {
 
@@ -65,7 +65,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 		* @param $attr string | contains the various elements of the spotlight (header, copy, link text and link url).
 		* @return String
 		**/
-		function ucf_spotlight_horizontal( $args ) {
+		private static function ucf_spotlight_horizontal( $args ) {
 			ob_start();
 		?>
 					</div>
@@ -99,7 +99,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 		* @param $attr string | contains the various elements of the spotlight (header, copy, link text and link url).
 		* @return String
 		**/
-		function ucf_spotlight_vertical( $args ) {
+		private static function ucf_spotlight_vertical( $args ) {
 			ob_start();
 		?>
 			<aside>
@@ -129,7 +129,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 		* @param $attr string | contains the various elements of the spotlight (header, copy, link text and link url).
 		* @return String
 		**/
-		function ucf_spotlight_square( $args ) {
+		private static function ucf_spotlight_square( $args ) {
 			ob_start();
 		?>
 			<aside>
