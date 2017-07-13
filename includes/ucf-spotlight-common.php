@@ -77,10 +77,10 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 						<div class="col-md-8 col-sm-12">
 							<?php if( $args['header'] ): ?>
 								<div class="spotlight-header"><?php echo $args['header'] ?></div>
-							<? endif; ?>
+							<?php endif; ?>
 							<?php if( $args['copy'] ): ?>
 								<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
-							<? endif ?>
+							<?php endif ?>
 							<?php if( $args['link_url'] && $args['link_text'] ): ?>
 								<a class="btn btn-primary" href="<?php echo $args['link_url'] ?>"><?php echo $args['link_text'] ?></a>
 							<?php endif; ?>
@@ -106,10 +106,10 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 				<div class="spotlight-vertical">
 					<?php if( $args['image'] ): ?>
 						<img class="spotlight-image" src="<?php echo $args['image'] ?>" alt="">
-					<? endif; ?>
+					<?php endif; ?>
 					<?php if( $args['header'] ): ?>
 						<div class="spotlight-header"><?php echo $args['header'] ?></div>
-					<? endif; ?>
+					<?php endif; ?>
 					<?php if( $args['copy'] ): ?>
 						<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
 					<?php endif; ?>
@@ -139,7 +139,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 					<div class="spotlight-square" style="background-image: url(<?php echo $args['image'] ?>)">
 						<?php if( $args['header'] ): ?>
 							<div class="spotlight-header"><?php echo $args['header'] ?></div>
-						<? endif; ?>
+						<?php endif; ?>
 						<?php if( $args['copy'] ): ?>
 							<p class="spotlight-copy"><?php echo $args['copy'] ?></p>
 						<?php endif; ?>
