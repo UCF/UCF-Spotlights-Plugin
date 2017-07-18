@@ -24,6 +24,10 @@ The ucf-spotlight shortcode has one option:
 
 ## Changelog ##
 
+### 1.0.2 ###
+Bug Fixes:
+* Fixed shorthand PHP tag usage (thanks @strmtrpr83)
+
 ### 1.0.1 ###
 Bug Fixes:
 * Fixes [#3](https://github.com/UCF/UCF-Spotlights-Plugin/issues/3) by adding necessary variables and making `UCF_Spotlight_Common::enqueue_styles` static.

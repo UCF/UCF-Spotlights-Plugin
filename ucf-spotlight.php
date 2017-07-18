@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF Spotlight
 Description:
-Version: 1.0.1
+Version: 1.0.2
 Author: UCF Web Communications
 License: GPL3
 */
