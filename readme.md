@@ -24,6 +24,10 @@ The ucf-spotlight shortcode has one option:
 
 ## Changelog ##
 
+### 1.0.3 ###
+Bug Fixes:
+* Debug log cleanup
+
 ### 1.0.2 ###
 Bug Fixes:
 * Fixed shorthand PHP tag usage (thanks @strmtrpr83)

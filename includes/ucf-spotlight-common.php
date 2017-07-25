@@ -34,9 +34,20 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 					'post_status' => 'publish',
 					'numberposts' => 1
 				);
-				$post = array_shift( get_posts( $args ) );
 
-				$spotlight_image = ( $thumb = get_post_thumbnail_id( $post->ID ) ) ? array_shift( wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' ) ) : NULL;
+				if( $posts = get_posts( $args ) ) {
+					$post = array_shift( $posts );
+				} else {
+					return;
+				}
+
+				if( $thumb = get_post_thumbnail_id( $post->ID )) {
+					if( $attachments = wp_get_attachment_image_src( $thumb, 'single-post-thumbnail' ) ) {
+						$attachment = array_shift( $attachments );
+					}
+				}
+
+				$spotlight_image = ( $thumb ) ? $attachment : NULL;
 
 				$args = array(
 					'layout'    => get_post_meta( $post->ID, "ucf_spotlight_layout", True ),
