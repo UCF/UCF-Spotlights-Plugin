@@ -79,10 +79,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 		private static function ucf_spotlight_horizontal( $args ) {
 			ob_start();
 		?>
-					</div>
-				</div>
-			</div>
-			<section class="spotlight-horizontal" style="background-image: url(<?php echo $args['image'] ?>)">
+			<aside class="spotlight-horizontal" style="background-image: url(<?php echo $args['image'] ?>)">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-sm-12">
@@ -98,7 +95,7 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 						</div>
 					</div>
 				</div>
-			</section>
+			</aside>
 		<?php
 			return ob_get_clean();
 		}
