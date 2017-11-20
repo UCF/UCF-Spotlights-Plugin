@@ -16,7 +16,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 				'ucf_spotlight_labels',
 				array(
 					'singular'    => 'Spotlight',
-					'plural'      => 'Spotlight',
+					'plural'      => 'Spotlights',
 					'text_domain' => 'ucf_spotlight'
 				)
 			);
@@ -78,7 +78,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 							<select id="ucf_spotlight_layout" name="ucf_spotlight_layout" class="regular-text">
 								<option value="square"<?php echo ( $layout == 'square' ) ? ' selected' : ''; ?>>Square - Feature Image Size: 650x300</option>
 								<option value="vertical"<?php echo ( $layout == 'vertical' ) ? ' selected' : ''; ?>>Vertical - Feature Image Size: 320x400</option>
-								<option value="horizontal"<?php echo ( $layout == 'horizontal' ) ? ' selected' : ''; ?>>Horizontal - Feature Image Size: 1100x400</option>
+								<option value="horizontal"<?php echo ( $layout == 'horizontal' ) ? ' selected' : ''; ?>>Horizontal - Feature Image Size: 1200x400</option>
 							</select>
 						</td>
 					</tr>
