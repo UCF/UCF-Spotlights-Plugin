@@ -43,7 +43,7 @@ Bug Fixes:
 
 = 1.0.1 =
 Bug Fixes:
-* Fixes #3 by adding necessary variables and making `UCF_Spotlight_Common::enqueue_styles` static.
+* Fixes [#3](https://github.com/UCF/UCF-Spotlights-Plugin/issues/3) by adding necessary variables and making `UCF_Spotlight_Common::enqueue_styles` static.
 * Added comments.
 
 = 1.0.0 =
