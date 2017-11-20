@@ -14,7 +14,7 @@ function ucf_spotlight_display_horizontal( $content='', $item, $args ) {
 
 	ob_start();
 ?>
-	<aside class="spotlight-horizontal py-5 <?php if ( $img ) { echo 'media-background-container'; } ?>">
+	<aside class="spotlight spotlight-horizontal py-5 <?php if ( $img ) { echo 'media-background-container'; } ?>">
 		<?php if ( $img ) { echo $img; } ?>
 		<div class="container">
 			<div class="row">
@@ -32,7 +32,7 @@ function ucf_spotlight_display_horizontal( $content='', $item, $args ) {
 					<?php endif; ?>
 
 					<?php if ( $args['link_url'] && $args['link_text'] ): ?>
-					<a class="btn btn-primary mt-4" href="<?php echo $args['link_url']; ?>">
+					<a class="spotlight-btn btn btn-primary mt-4" href="<?php echo $args['link_url']; ?>">
 						<?php echo $args['link_text']; ?>
 					</a>
 					<?php endif; ?>

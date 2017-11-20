@@ -15,7 +15,7 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 	ob_start();
 ?>
 	<aside>
-		<div class="spotlight-vertical font-sans-serif">
+		<div class="spotlight spotlight-vertical font-sans-serif">
 			<?php if ( $args['link_url'] ): ?>
 			<a href="<?php echo $args['link_url']; ?>" style="color: inherit;">
 			<?php endif; ?>
@@ -39,7 +39,7 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 			<?php endif; ?>
 
 			<?php if ( $args['link_url'] && $args['link_text'] ): ?>
-			<a class="btn btn-primary mt-3" href="<?php echo $args['link_url']; ?>">
+			<a class="spotlight-btn btn btn-primary mt-3" href="<?php echo $args['link_url']; ?>">
 				<?php echo $args['link_text']; ?>
 			</a>
 			<?php endif; ?>
