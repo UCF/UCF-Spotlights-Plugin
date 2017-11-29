@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF Spotlight
 Description:
-Version: 1.0.3
+Version: 2.0.0
 Author: UCF Web Communications
 License: GPL3
 */
@@ -16,12 +16,16 @@ add_action( 'plugins_loaded', function() {
 
 	define( 'UCF_SPOTLIGHT__PLUGIN_FILE', __FILE__ );
 
-	require_once 'includes/ucf-spotlight-config.php';
-	require_once 'includes/ucf-spotlight-common.php';
-	require_once 'shortcodes/ucf-spotlight-shortcode.php';
-	require_once 'includes/ucf-spotlight-posttype.php';
+	add_image_size( 'ucf-spotlight-horizontal', 1200, 400, false );
+	add_image_size( 'ucf-spotlight-vertical', 360, 360, false );
+	add_image_size( 'ucf-spotlight-square', 767, 767, true );
 
-	add_action( 'admin_menu', array( 'UCF_Spotlight_Config', 'add_options_page' ) );
+	require_once 'layouts/layout-square.php';
+	require_once 'layouts/layout-horizontal.php';
+	require_once 'layouts/layout-vertical.php';
+	require_once 'includes/ucf-spotlight-common.php';
+	require_once 'includes/ucf-spotlight-posttype.php';
+	require_once 'shortcodes/ucf-spotlight-shortcode.php';
 
 } );
 
