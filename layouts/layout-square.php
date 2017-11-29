@@ -14,11 +14,11 @@ function ucf_spotlight_display_square( $content='', $item, $args ) {
 
 	ob_start();
 ?>
-	<aside>
+	<aside class="spotlight spotlight-square">
 		<?php if ( $args['link_url'] ): ?>
-			<a href="<?php echo $args['link_url']; ?>" class="hover-parent text-decoration-none">
+			<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link hover-parent text-decoration-none">
 		<?php endif; ?>
-			<div class="spotlight spotlight-square <?php if ( $img ) { echo 'media-background-container'; } ?> d-flex flex-column text-center p-4" style="min-height: 20rem;">
+			<div class="<?php if ( $img ) { echo 'media-background-container'; } ?> d-flex flex-column text-center p-4" style="min-height: 20rem;">
 				<?php if ( $img ) { echo $img; } ?>
 
 				<?php if ( $args['header'] ): ?>
