@@ -23,8 +23,14 @@ The `[ucf-spotlight]` shortcode has one option:
 ## Changelog ##
 
 ### 2.0.0 ###
+This release contains breaking changes from v1.0.3 and older.  Please review notes below before upgrading:
+
 Enhancements:
-* The markup generated for each Spotlight type has been modified to utilize Athena Framework classes.  The plugin now requires the Athena Framework to display Spotlights properly.
+* Updates the plugin to remove all fallback styles.  The plugin now requires using a theme that loads the Athena Framework.
+* The plugin options page in the WordPress admin has been removed, since there are no longer any configurable plugin-level settings.
+* Adds a unique layout hook for each layout (`ucf_spotlight_display_square`, `ucf_spotlight_display_horizontal`, and `ucf_spotlight_display_vertical`), replacing the previous `ucf_spotlight_display` hook that handled all three.
+* Adds new layout-specific thumbnail sizes that are sized appropriately for the given layout (`ucf-spotlight-square`, `ucf-spotlight-horizontal`, and `ucf-spotlight-vertical`).
+* Adds minor markup adjustments to each spotlight for consistency across each layout, to take advantage of Athena classes, and to fix some minor bugs (e.g. hover states).  All spotlights are now wrapped in an `<aside>` tag, and the horizontal layout no longer includes top-level closing divs (these can be handled at the theme level if needed).
 
 ### 1.0.3 ###
 Bug Fixes:
