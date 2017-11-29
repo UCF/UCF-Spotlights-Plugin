@@ -12,7 +12,9 @@ if ( ! class_exists( 'UCF_Spotlight_Shortcode' ) ) {
 				'slug'  => '',
 			), $atts );
 
-			return UCF_Spotlight_Common::display_spotlight( $atts );
+			$spotlight = UCF_Spotlight_Common::get_spotlight_by_slug( $atts['slug'] );
+
+			return UCF_Spotlight_Common::display_spotlight( $spotlight, $atts );
 		}
 	}
 	add_shortcode( 'ucf-spotlight', array( 'UCF_Spotlight_Shortcode', 'shortcode' ) );
