@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: UCF Spotlights
-Description: Provides a shortcode, functions, and default styles for displaying Spotlights.
+Description: Provides a custom post type, shortcode and functions for displaying Spotlights.
 Version: 2.0.1
 Author: UCF Web Communications
 License: GPL3

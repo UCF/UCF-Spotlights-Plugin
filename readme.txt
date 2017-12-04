@@ -7,7 +7,7 @@ Stable tag: 2.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
-Provides a shortcode, functions, and default styles for displaying Spotlights.
+Provides a custom post type, shortcode and functions for displaying Spotlights.
 
 == Description ==
 

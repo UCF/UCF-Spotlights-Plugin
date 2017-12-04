@@ -1,6 +1,6 @@
 # UCF Spotlights Plugin #
 
-Provides a shortcode, functions, and default styles for displaying Spotlights.
+Provides a custom post type, shortcode and functions for displaying Spotlights.
 
 ## Description ##
 
