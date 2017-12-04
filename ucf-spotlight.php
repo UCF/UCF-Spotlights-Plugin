@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: UCF Spotlight
-Description:
+Plugin Name: UCF Spotlights
+Description: Provides a shortcode, functions, and default styles for displaying Spotlights.
 Version: 2.0.0
 Author: UCF Web Communications
 License: GPL3
