@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 4.7.3
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
@@ -28,6 +28,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 
 == Changelog ==
+
+= 2.0.1 =
+Enhancements:
+* Added missing plugin description
 
 = 2.0.0 =
 This release contains breaking changes from v1.0.3 and older.  Please review notes below before upgrading:
@@ -59,7 +63,7 @@ Bug Fixes:
 == Upgrade Notice ==
 
 = 2.0.0 =
-The UCF-Spotlights-Plugin now requires the Athena Framework to display Spotlight styles properly.
+The UCF-Spotlights-Plugin now requires the Athena Framework to display Spotlight styles properly. Please see release notes for v2.0.0 for other breaking changes.
 
 
 == Installation Requirements ==
