@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 4.7.3
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
@@ -28,6 +28,14 @@ The `[ucf-spotlight]` shortcode has one option:
 
 
 == Changelog ==
+
+= 2.0.2 =
+Enhancements:
+* Added minor accessibility improvements to square and vertical spotlight layouts
+* Removed faux buttons from square spotlights if a Link URL isn't provided
+
+Bug Fixes:
+* Fixed issue with spotlight meta fields not allowing empty values to be saved
 
 = 2.0.1 =
 Enhancements:

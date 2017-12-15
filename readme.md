@@ -22,6 +22,14 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.2 ###
+Enhancements:
+* Added minor accessibility improvements to square and vertical spotlight layouts
+* Removed faux buttons from square spotlights if a Link URL isn't provided
+
+Bug Fixes:
+* Fixed issue with spotlight meta fields not allowing empty values to be saved
+
 ### 2.0.1 ###
 Enhancements:
 * Added missing plugin description
