@@ -34,7 +34,7 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 		<?php endif; ?>
 
 		<?php if ( $args['link_url'] && $args['link_text'] ): ?>
-		<div class="spotlight-btn btn btn-primary mt-3" href="<?php echo $args['link_url']; ?>">
+		<div class="spotlight-btn btn btn-primary mt-3">
 			<?php echo $args['link_text']; ?>
 		</div>
 		<?php endif; ?>
