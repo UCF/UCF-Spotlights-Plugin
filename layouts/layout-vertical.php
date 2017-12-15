@@ -16,7 +16,7 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 ?>
 	<aside class="spotlight spotlight-vertical font-sans-serif">
 		<?php if ( $args['link_url'] ): ?>
-		<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link" style="color: inherit;">
+		<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link text-decoration-none" style="color: inherit;">
 		<?php endif; ?>
 
 		<?php if ( $img ) { echo $img; } ?>
@@ -27,10 +27,6 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 		</div>
 		<?php endif; ?>
 
-		<?php if ( $args['link_url'] ): ?>
-		</a>
-		<?php endif; ?>
-
 		<?php if ( $args['copy'] ): ?>
 		<div class="spotlight-copy">
 			<?php echo $args['copy']; ?>
@@ -38,8 +34,12 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 		<?php endif; ?>
 
 		<?php if ( $args['link_url'] && $args['link_text'] ): ?>
-		<a class="spotlight-btn btn btn-primary mt-3" href="<?php echo $args['link_url']; ?>">
+		<div class="spotlight-btn btn btn-primary mt-3">
 			<?php echo $args['link_text']; ?>
+		</div>
+		<?php endif; ?>
+
+		<?php if ( $args['link_url'] ): ?>
 		</a>
 		<?php endif; ?>
 	</aside>
