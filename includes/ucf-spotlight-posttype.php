@@ -135,43 +135,31 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 			if ( 'ucf_spotlight' !== $post_type ) return;
 
 			if ( isset( $_POST['ucf_spotlight_layout'] ) ) {
-				// Ensure field is valid.
 				$layout = $_POST['ucf_spotlight_layout'];
-				if ( $layout ) {
-					update_post_meta( $post_id, 'ucf_spotlight_layout', $layout );
-				}
+				update_post_meta( $post_id, 'ucf_spotlight_layout', $layout );
 			}
 
 			if ( isset( $_POST['ucf_spotlight_header'] ) ) {
 				// Ensure field is valid.
 				$header = sanitize_text_field( $_POST['ucf_spotlight_header'] );
-				if ( $header ) {
-					update_post_meta( $post_id, 'ucf_spotlight_header', $header );
-				}
+				update_post_meta( $post_id, 'ucf_spotlight_header', $header );
 			}
 
 			if ( isset( $_POST['ucf_spotlight_copy'] ) ) {
-				// Ensure field is valid.
 				$copy = $_POST['ucf_spotlight_copy'];
-				if ( $copy ) {
-					update_post_meta( $post_id, 'ucf_spotlight_copy', $copy );
-				}
+				update_post_meta( $post_id, 'ucf_spotlight_copy', $copy );
 			}
 
 			if ( isset( $_POST['ucf_spotlight_link_text'] ) ) {
 				// Ensure field is valid.
 				$link_text = sanitize_text_field( $_POST['ucf_spotlight_link_text'] );
-				if ( $link_text ) {
-					update_post_meta( $post_id, 'ucf_spotlight_link_text', $link_text );
-				}
+				update_post_meta( $post_id, 'ucf_spotlight_link_text', $link_text );
 			}
 
 			if ( isset( $_POST['ucf_spotlight_link_url'] ) ) {
 				// Ensure field is valid.
 				$link_url = sanitize_text_field( $_POST['ucf_spotlight_link_url'] );
-				if ( $link_url ) {
-					update_post_meta( $post_id, 'ucf_spotlight_link_url', $link_url );
-				}
+				update_post_meta( $post_id, 'ucf_spotlight_link_url', $link_url );
 			}
 		}
 
