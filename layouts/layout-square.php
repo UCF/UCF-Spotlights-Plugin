@@ -31,7 +31,7 @@ function ucf_spotlight_display_square( $content='', $item, $args ) {
 					<?php if ( $args['copy'] ) { echo $args['copy']; } ?>
 				</div>
 
-				<?php if ( $args['link_text'] ): ?>
+				<?php if ( $args['link_url'] && $args['link_text'] ): ?>
 				<div class="spotlight-btn-wrapper font-sans-serif mt-auto pt-5">
 					<div class="spotlight-btn btn btn-primary btn-sm p-3">
 						<?php echo $args['link_text']; ?>
