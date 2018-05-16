@@ -10,6 +10,8 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 			ob_start();
 
 			if ( $item ) {
+				$args = array_merge( self::get_spotlight_meta( $item->ID ), $args );
+
 				// Main content/loop
 				$layout_content = ucf_spotlight_display_square( '', $item, $args ); // square=default
 				if ( has_filter( 'ucf_spotlight_display_' . $args['layout'] ) ) {
