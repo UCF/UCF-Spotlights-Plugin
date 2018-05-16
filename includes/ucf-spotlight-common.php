@@ -7,16 +7,16 @@ if ( ! class_exists( 'UCF_Spotlight_Common' ) ) {
 	class UCF_Spotlight_Common {
 
 		public static function display_spotlight( $item, $args=array() ) {
-			$args = array_merge( self::get_spotlight_meta( $item->ID ), $args );
-
 			ob_start();
 
-			// Main content/loop
-			$layout_content = ucf_spotlight_display_square( '', $item, $args ); // square=default
-			if ( has_filter( 'ucf_spotlight_display_' . $args['layout'] ) ) {
-				$layout_content = apply_filters( 'ucf_spotlight_display_' . $args['layout'], $layout_content, $item, $args );
+			if ( $item ) {
+				// Main content/loop
+				$layout_content = ucf_spotlight_display_square( '', $item, $args ); // square=default
+				if ( has_filter( 'ucf_spotlight_display_' . $args['layout'] ) ) {
+					$layout_content = apply_filters( 'ucf_spotlight_display_' . $args['layout'], $layout_content, $item, $args );
+				}
+				echo $layout_content;
 			}
-			echo $layout_content;
 
 			return ob_get_clean();
 		}
