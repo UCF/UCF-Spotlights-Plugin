@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.4 ###
+Bug Fixes:
+* Disabled archives by default.
+
 ### 2.0.3 ###
 Bugfixes:
 * Fixed output of `[ucf-spotlight]` when the requested spotlight post does not exist
