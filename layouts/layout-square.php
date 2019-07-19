@@ -14,7 +14,7 @@ function ucf_spotlight_display_square( $content='', $item, $args ) {
 
 	ob_start();
 ?>
-	<aside class="spotlight spotlight-square">
+	<aside role="note" class="spotlight spotlight-square">
 		<?php if ( $args['link_url'] ): ?>
 			<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link hover-parent text-decoration-none">
 		<?php endif; ?>

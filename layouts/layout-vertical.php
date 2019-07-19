@@ -14,7 +14,7 @@ function ucf_spotlight_display_vertical( $content='', $item, $args ) {
 
 	ob_start();
 ?>
-	<aside class="spotlight spotlight-vertical font-sans-serif">
+	<aside role="note" class="spotlight spotlight-vertical font-sans-serif">
 		<?php if ( $args['link_url'] ): ?>
 		<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link text-decoration-none" style="color: inherit;">
 		<?php endif; ?>
