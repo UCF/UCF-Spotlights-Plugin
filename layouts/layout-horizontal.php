@@ -14,7 +14,7 @@ function ucf_spotlight_display_horizontal( $content='', $item, $args ) {
 
 	ob_start();
 ?>
-	<aside class="spotlight spotlight-horizontal py-5 <?php if ( $img ) { echo 'media-background-container'; } ?>">
+	<aside role="note" class="spotlight spotlight-horizontal py-5 <?php if ( $img ) { echo 'media-background-container'; } ?>">
 		<?php if ( $img ) { echo $img; } ?>
 		<div class="container">
 			<div class="row">
