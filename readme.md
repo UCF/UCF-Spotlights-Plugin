@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.5 ###
+Enhancements:
+* Added `role="note"` to `<aside>` elements in each Spotlight layout to remove ARIA landmark associations.
+
 ### 2.0.4 ###
 Bug Fixes:
 * Disabled archives by default.

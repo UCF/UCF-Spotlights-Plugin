@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 5.0.3
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
@@ -28,6 +28,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 
 == Changelog ==
+
+= 2.0.5 =
+Enhancements:
+* Added `role="note"` to `<aside>` elements in each Spotlight layout to remove ARIA landmark associations.
 
 = 2.0.4 =
 Bug Fixes:
