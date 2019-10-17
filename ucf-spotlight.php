@@ -5,6 +5,7 @@ Description: Provides a custom post type, shortcode and functions for displaying
 Version: 2.0.5
 Author: UCF Web Communications
 License: GPL3
+GitHub Plugin URI: UCF/UCF-Spotlights-Plugin
 */
 
 
