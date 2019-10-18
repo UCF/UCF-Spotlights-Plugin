@@ -22,6 +22,13 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.6 ###
+Enhancements:
+* Added Github Updater support.
+
+Bug fixes:
+* Added `d-block` class to links surrounding vertical and square Spotlights to ensure an appropriate outline is always visible when those links are focused via keyboard.
+
 ### 2.0.5 ###
 Enhancements:
 * Added `role="note"` to `<aside>` elements in each Spotlight layout to remove ARIA landmark associations.
