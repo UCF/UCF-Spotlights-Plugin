@@ -4,6 +4,7 @@ Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 5.2.4
 Stable tag: 2.0.6
+Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
@@ -32,6 +33,8 @@ The `[ucf-spotlight]` shortcode has one option:
 = 2.0.6 =
 Enhancements:
 * Added Github Updater support.
+* Upgraded project packages.
+* Added PR and issue templates, CONTRIBUTING doc, and linter configs to the project.
 
 Bug fixes:
 * Added `d-block` class to links surrounding vertical and square Spotlights to ensure an appropriate outline is always visible when those links are focused via keyboard.
