@@ -16,7 +16,7 @@ function ucf_spotlight_display_square( $content='', $item, $args ) {
 ?>
 	<aside role="note" class="spotlight spotlight-square">
 		<?php if ( $args['link_url'] ): ?>
-			<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link hover-parent text-decoration-none">
+			<a href="<?php echo $args['link_url']; ?>" class="spotlight-block-link d-block hover-parent text-decoration-none">
 		<?php endif; ?>
 			<div class="<?php if ( $img ) { echo 'media-background-container'; } ?> bg-default d-flex flex-column text-center p-4" style="min-height: 20rem;">
 				<?php if ( $img ) { echo $img; } ?>
