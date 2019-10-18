@@ -37,7 +37,7 @@ If you've followed the steps above and have a valid bug report to submit, you ca
 
 Add a descriptive, understandable title and details about the bug in the description field, following the template provided. Please try to be as detailed as possible in your report. What steps will reproduce the issue? What browser(s) and OS experience the problem? Do other browsers show the bug differently? What would you expect to be the outcome? All of the information you provide will help us quickly evaluate and fix the issue.
 
-If you have a live example of the bug available somewhere public, please include a link in the bug report.  If you're not comfortable including the URL in the Github issue (e.g. it points to a development environment), you can make a note of it in the report (e.g. "see Slack for example URL"), then share the URL in the [#prj-UCF-Spotlights-Plugin Slack channel](https://ucf-wp.slack.com/messages/prj-UCF-Spotlights-Plugin/).
+If you have a live example of the bug available somewhere public, please include a link in the bug report.  If you're not comfortable including the URL in the Github issue (e.g. it points to a development environment), you can make a note of it in the report (e.g. "see Slack for example URL"), then share the URL in Slack.
 
 
 ## Feature requests
