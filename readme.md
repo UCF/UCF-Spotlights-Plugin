@@ -25,6 +25,8 @@ The `[ucf-spotlight]` shortcode has one option:
 ### 2.0.6 ###
 Enhancements:
 * Added Github Updater support.
+* Upgraded project packages.
+* Added PR and issue templates, CONTRIBUTING doc, and linter configs to the project.
 
 Bug fixes:
 * Added `d-block` class to links surrounding vertical and square Spotlights to ensure an appropriate outline is always visible when those links are focused via keyboard.
