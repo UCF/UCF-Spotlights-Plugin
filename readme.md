@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.7 ###
+Documentation:
+* Updated contributing doc to reflect the switch from slack to teams.
+
 ### 2.0.6 ###
 Enhancements:
 * Added Github Updater support.

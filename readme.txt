@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 5.2.4
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -29,6 +29,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 
 == Changelog ==
+
+= 2.0.7 =
+Documentation:
+* Updated contributing doc to reflect the switch from slack to teams.
 
 = 2.0.6 =
 Enhancements:
