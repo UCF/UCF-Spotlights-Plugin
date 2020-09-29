@@ -231,7 +231,7 @@ if ( ! class_exists( 'UCF_Spotlight_PostType' ) ) {
 				'can_export'            => true,
 				'has_archive'           => false,
 				'exclude_from_search'   => false,
-				'publicly_queryable'    => true,
+				'publicly_queryable'    => false,
 				'capability_type'       => 'post',
 			);
 			$args = apply_filters( 'ucf_spotlight_post_type_args', $args );
