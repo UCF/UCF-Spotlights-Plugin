@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.0.8 ###
+Bug Fixes:
+* Disabled permalink page creation by default
+
 ### 2.0.7 ###
 Documentation:
 * Updated contributing doc to reflect the switch from slack to teams.
