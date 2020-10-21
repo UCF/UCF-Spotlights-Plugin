@@ -29,6 +29,7 @@ add_action( 'plugins_loaded', function() {
 	require_once UCF_SPOTLIGHT__PLUGIN_DIR . 'includes/ucf-spotlight-common.php';
 	require_once UCF_SPOTLIGHT__PLUGIN_DIR . 'includes/ucf-spotlight-posttype.php';
 	require_once UCF_SPOTLIGHT__PLUGIN_DIR . 'includes/ucf-spotlight-templates.php';
+	require_once UCF_SPOTLIGHT__PLUGIN_DIR . 'includes/ucf-spotlight-meta.php';
 	require_once UCF_SPOTLIGHT__PLUGIN_DIR . 'shortcodes/ucf-spotlight-shortcode.php';
 
 } );

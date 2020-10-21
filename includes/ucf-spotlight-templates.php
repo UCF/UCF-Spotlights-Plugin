@@ -7,7 +7,7 @@
  *
  * @author Jo Dickson
  * @since 2.1.0
- **/
+ */
 function ucf_spotlight_template( $template ) {
 	if ( get_query_var( 'post_type' ) === 'ucf_spotlight' && ! is_archive() ) {
 		// Look for a file in theme
