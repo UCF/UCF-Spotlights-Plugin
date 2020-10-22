@@ -15,8 +15,6 @@ function ucf_spotlight_wp_sitemaps( $post_types ) {
 	return $post_types;
 }
 
-add_filter( 'wp_sitemaps_post_types', 'ucf_spotlight_wp_sitemaps', 10, 1 );
-
 
 /**
  * Removes the Spotlight post type from Yoast-generated sitemaps.
@@ -33,8 +31,6 @@ function ucf_spotlight_yoast_sitemaps( $excluded, $post_type ) {
 	}
 	return $excluded;
 }
-
-add_filter( 'wpseo_sitemap_exclude_post_type', 'ucf_spotlight_yoast_sitemaps', 10, 2 );
 
 
 /**
@@ -119,11 +115,13 @@ function ucf_spotlight_yoast_titles( $options ) {
  * Yoast is activated:
  */
 if ( class_exists( 'WPSEO_Options' ) ) {
+	add_filter( 'wpseo_sitemap_exclude_post_type', 'ucf_spotlight_yoast_sitemaps', 10, 2 );
 	add_filter( 'wpseo_robots', 'ucf_spotlight_yoast_noindex' );
 	add_filter( 'wpseo_accessible_post_types', 'ucf_spotlight_yoast_accessible_cpt', 10, 1 );
 	add_filter( 'option_wpseo_titles', 'ucf_spotlight_yoast_titles', 10, 1 );
 }
 else {
+	add_filter( 'wp_sitemaps_post_types', 'ucf_spotlight_wp_sitemaps', 10, 1 );
 	add_action( 'wp_head', 'ucf_spotlight_meta_noindex', 1 );
 }
 
