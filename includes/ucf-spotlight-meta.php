@@ -39,6 +39,7 @@ add_filter( 'wpseo_sitemap_exclude_post_type', 'ucf_spotlight_yoast_sitemaps', 1
 
 /**
  * Appends a noindex,nofollow meta tag to single Spotlights.
+ *
  * For use via `wp_head`.
  *
  * @since 2.1.0
@@ -56,6 +57,7 @@ function ucf_spotlight_meta_noindex() {
 
 /**
  * Appends a noindex,nofollow meta tag to single Spotlights.
+ *
  * For use via the `wpseo_robots` hook.
  *
  * @since 2.1.0
@@ -75,6 +77,8 @@ function ucf_spotlight_yoast_noindex( $robots ) {
  * Removes Spotlights from Yoast's list of "accessible"
  * post types (public, indexable).
  *
+ * For use via the `wpseo_accessible_post_types` hook.
+ *
  * @since 2.1.0
  * @author Jo Dickson
  * @param array $post_types Array of post type names
@@ -92,6 +96,8 @@ function ucf_spotlight_yoast_accessible_cpt( $post_types ) {
  * Force-toggles Yoast settings in the admin to make it
  * slightly more obvious that these settings aren't
  * editable.
+ *
+ * For use via the `option_wpseo_titles` hook.
  *
  * @since 2.1.0
  * @author Jo Dickson
