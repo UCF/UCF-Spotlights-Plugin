@@ -2,7 +2,7 @@
 
 /**
  * Returns a default template for single Spotlights when the
- * current theme (or its parent theme, if applicable) haven't
+ * current theme (or its parent theme, if applicable) hasn't
  * already defined one.
  *
  * @author Jo Dickson
