@@ -15,7 +15,7 @@ function ucf_spotlight_wp_sitemaps( $post_types ) {
 	return $post_types;
 }
 
-add_filter( 'wp_sitemaps_post_types', 'ucf_spotlight_sitemaps', 10, 1 );
+add_filter( 'wp_sitemaps_post_types', 'ucf_spotlight_wp_sitemaps', 10, 1 );
 
 
 /**
@@ -106,7 +106,7 @@ function ucf_spotlight_yoast_accessible_cpt( $post_types ) {
  */
 function ucf_spotlight_yoast_titles( $options ) {
 	// "Show Spotlights in search results?"
-	$options['noindex-ucf_spotlight'] = true;
+	$options['noindex-ucf_spotlight'] = true; // yes this has to be `true` ¯\_(ツ)_/¯
 	// "Yoast SEO Meta Box"
 	$options['display-metabox-pt-ucf_spotlight'] = false;
 
