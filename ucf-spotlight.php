@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF Spotlights
 Description: Provides a custom post type, shortcode and functions for displaying Spotlights.
-Version: 2.0.7
+Version: 2.1.0
 Author: UCF Web Communications
 License: GPL3
 GitHub Plugin URI: UCF/UCF-Spotlights-Plugin

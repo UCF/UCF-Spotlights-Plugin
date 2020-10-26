@@ -22,6 +22,15 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.1.0 ###
+Enhancements:
+* Added a new default template for single Spotlights to allow for previews to function properly if the active theme hasn't already defined one (fixes "blank page" bug when viewing a single Spotlight).
+* Added a `<meta name="robots" content="noindex,nofollow">` tag to the document head on single Spotlights.  Supports Yoast if activated.
+* Added excludes for Spotlights from sitemaps (WP 5.5+, or Yoast if activated)
+* Added some overrides to Yoast settings for Spotlights to force admin toggles to specific values.
+* Updated the main plugin file to use absolute paths for `require_once`'s.
+* Upgraded packages
+
 ### 2.0.7 ###
 Documentation:
 * Updated contributing doc to reflect the switch from slack to teams.
