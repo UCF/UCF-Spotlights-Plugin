@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.1.1 ###
+Enhancements:
+* Added composer file.
+
 ### 2.1.0 ###
 Enhancements:
 * Added a new default template for single Spotlights to allow for previews to function properly if the active theme hasn't already defined one (fixes "blank page" bug when viewing a single Spotlight).

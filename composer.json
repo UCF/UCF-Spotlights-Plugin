@@ -1,0 +1,8 @@
+{
+    "name": "ucf/ucf-spotlights-plugin",
+    "description": "Provides a custom post type, shortcode and functions for displaying Spotlights.",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
