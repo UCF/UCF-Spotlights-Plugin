@@ -22,6 +22,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 ## Changelog ##
 
+### 2.1.2 ###
+Bug Fixes:
+* Corrected some deprecation issues
+
 ### 2.1.1 ###
 Enhancements:
 * Added composer file.

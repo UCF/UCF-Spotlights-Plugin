@@ -3,7 +3,7 @@ Contributors: ucfwebcom
 Tags: ucf, spotlights
 Requires at least: 4.7.3
 Tested up to: 6.1
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 Requires PHP: 5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
@@ -29,6 +29,10 @@ The `[ucf-spotlight]` shortcode has one option:
 
 
 == Changelog ==
+
+= 2.1.2 =
+Bug Fixes:
+* Corrected some deprecation issues
 
 = 2.1.1 =
 Enhancements:
