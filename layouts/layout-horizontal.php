@@ -7,7 +7,7 @@
  * @param array $args | contains the various elements of the spotlight (header, copy, link text and link url).
  * @return String
  **/
-function ucf_spotlight_display_horizontal( $content='', $item, $args ) {
+function ucf_spotlight_display_horizontal( $content='', $item = null, $args = array() ) {
 	$img = get_the_post_thumbnail( $item, 'ucf-spotlight-horizontal', array(
 		'class' => 'media-background object-fit-cover hidden-md-down'
 	) );
