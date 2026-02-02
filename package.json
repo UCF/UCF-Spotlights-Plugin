@@ -11,6 +11,6 @@
     "gulp": "~4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-readme-to-markdown": "^0.2.1",
-    "merge": "^1.2.1"
+    "merge": "^2.1.1"
   }
 }
